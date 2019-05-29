@@ -1,0 +1,56 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>netcoreapp2.2</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.AspNetCore" Version="2.2.0" />
+      <PackageReference Include="Microsoft.AspNetCore.Hosting.WindowsServices" Version="2.2.0" />
+      <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />
+      <PackageReference Include="Microsoft.AspNetCore.SpaServices" Version="2.2.0" />
+      <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="2.2.0" />
+      <PackageReference Include="Serilog.AspNetCore" Version="2.1.2-dev-00028" />
+      <PackageReference Include="Serilog.Sinks.ColoredConsole" Version="3.0.1" />
+      <PackageReference Include="Serilog.Sinks.Console" Version="3.1.2-dev-00798" />
+      <PackageReference Include="Serilog.Sinks.File" Version="4.1.0-dev-00838" />
+      <PackageReference Include="Serilog.Sinks.RollingFile" Version="3.3.1-dev-00771" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Update="install.bat">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="appsettings.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="uninstall.bat">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Remove="ClientApp\node_modules\**" />
+      <None Remove="Publish\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Remove="ClientApp\node_modules\**" />
+      <Compile Remove="Publish\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="ClientApp\node_modules\**" />
+      <EmbeddedResource Remove="Publish\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <TypeScriptCompile Include="ClientApp\src\app\models\ApiData.ts" />
+      <TypeScriptCompile Include="ClientApp\src\app\services\base\entity.ts" />
+      <TypeScriptCompile Include="ClientApp\src\app\services\base\rest.service.ts" />
+      <TypeScriptCompile Include="ClientApp\src\app\services\apiData.service.ts" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="ClientApp\src\app\components" />
+    </ItemGroup>
+
+</Project>

@@ -9,7 +9,7 @@
       <PackageReference Include="Microsoft.AspNetCore" Version="2.2.0" />
       <PackageReference Include="Microsoft.AspNetCore.Hosting.WindowsServices" Version="2.2.0" />
       <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />
-      <PackageReference Include="Microsoft.AspNetCore.SpaServices" Version="2.2.0" />
+      <PackageReference Include="Microsoft.AspNetCore.SpaServices" Version="2.2.7" />
       <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="2.2.0" />
       <PackageReference Include="Serilog.AspNetCore" Version="2.1.2-dev-00028" />
       <PackageReference Include="Serilog.Sinks.ColoredConsole" Version="3.0.1" />
